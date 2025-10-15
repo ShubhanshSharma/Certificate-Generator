@@ -65,6 +65,7 @@ export default function Login() {
         // Now check the superuser role
         const token = data.access;
         try {
+          const API_URL = import.meta.env.VITE_API_BASE_URL;
           const roleRes = await fetch(`${API_URL}/api/check-superuser/`, {
             method: 'POST',
             headers: {
